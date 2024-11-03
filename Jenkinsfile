@@ -1,6 +1,6 @@
 pipeline {
-    agent any
 
+    agent any
     environment {
         AWS_SAM_STACK_NAME = 'sam-app' 
         AWS_DEFAULT_REGION = 'ap-southeast-1'
