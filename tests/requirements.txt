@@ -1,4 +1,4 @@
 pytest
-pytho3-pytest
+python3-pytest
 boto3
 requests
