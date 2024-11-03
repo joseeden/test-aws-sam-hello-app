@@ -5,7 +5,8 @@ import pytest
 import requests
 
 """
-Make sure env variable AWS_SAM_STACK_NAME exists with the name of the stack we are going to test. 
+Make sure env variable AWS_SAM_STACK_NAME exists with the name of the stack 
+we are going to test. 
 """
 
 
@@ -17,7 +18,7 @@ class TestApiGateway:
         stack_name = os.environ.get("AWS_SAM_STACK_NAME")
 
         if stack_name is None:
-            raise ValueError('Please set the AWS_SAM_STACK_NAME environment variable to the name of your stack')
+            raise ValueError('Please set AWS_SAM_STACK_NAME')
 
         client = boto3.client("cloudformation")
 
@@ -25,7 +26,7 @@ class TestApiGateway:
             response = client.describe_stacks(StackName=stack_name)
         except Exception as e:
             raise Exception(
-                f"Cannot find stack {stack_name} \n" f'Please make sure a stack with the name "{stack_name}" exists'
+                f"Cannot find {stack_name} \n" 
             ) from e
 
         stacks = response["Stacks"]
