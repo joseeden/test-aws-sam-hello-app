@@ -13,7 +13,7 @@ pipeline {
         
         stage('Test') {
             environment {
-                AWS_SAM_STACK_NAME = 'AWS SAM App' // Set your actual stack name here
+                AWS_SAM_STACK_NAME = 'AWS SAM App' 
             }
             steps {
                 script {
@@ -32,6 +32,7 @@ pipeline {
 
         stage('Deploy') {
             environment {
+                AWS_DEFAULT_REGION = 'ap-southeast-1'
                 AWS_ACCESS_KEY_ID = credentials('aws-access-key')
                 AWS_SECRET_ACCESS_KEY = credentials('aws-secret-key')
             }
