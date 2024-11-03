@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        AWS_SAM_STACK_NAME = 'AWS SAM App' 
+        AWS_SAM_STACK_NAME = 'AWSSAMApp' 
         AWS_DEFAULT_REGION = 'ap-southeast-1'
         AWS_ACCESS_KEY_ID = credentials('aws-access-key')
         AWS_SECRET_ACCESS_KEY = credentials('aws-secret-key')        
