@@ -30,6 +30,7 @@ pipeline {
             
             steps {
                 sh "sam deploy -t template.yaml --no-confirm-changeset --no-fail-on-empty-changeset"
+                
             }
         }
       
