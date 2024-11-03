@@ -42,7 +42,7 @@ pipeline {
             steps {
                 script {
                     // Deploy SAM app
-                    sh ". venv/bin/activate && sam deploy -t template.yaml --no-confirm-changeset --no-fail-on-empty-changeset"
+                    sh ". venv/bin/activate && sam deploy -t template.yaml --no-confirm-changeset --no-fail-on-empty-changeset --region ${AWS_DEFAULT_REGION}""
                 }
             }
         }
